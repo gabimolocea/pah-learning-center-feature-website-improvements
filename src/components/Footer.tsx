@@ -91,7 +91,7 @@ export function Footer() {
             className="mt-8 pt-8 border-t border-gray-300 text-center"
           >
             <p className="text-gray-500 text-sm">
-              This curriculum is provided by Global Learning Collaborative.
+              This curriculum is jointly provided by Cornerstone Medical Education and the American Academy of CME.
             </p>
             <p className="text-gray-500 text-sm mt-1">
               © 2025 ReachMD. All rights reserved.
