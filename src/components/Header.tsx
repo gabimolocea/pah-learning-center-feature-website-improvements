@@ -45,9 +45,9 @@ export function Header() {
                                     <Image
                           src={`${assetPrefix}/reach.png`}
                           alt="ReachMD"
-                          width={120}
-                          height={36}
-                          className="h-6 sm:h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
+                          width={200}
+                          height={60}
+                          className="h-10 sm:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
                           priority
                           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         />
