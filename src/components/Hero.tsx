@@ -128,7 +128,7 @@ export function Hero() {
               transition={{ duration: 0.2, delay: 0.15 }}
               className="text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed max-w-xl"
             >
-              In the complex and quickly-evolving hypercortisolism landscape, it can be quite difficult for busy clinicians – particularly those who often see all-comer patient populations – to stay abreast with the latest prevalence data and advances in screening, diagnosis, and treatment. The prevalence of hypercortisolism in patients with complex metabolic conditions has been found to be larger than previously documented, establishing a call to action in the HCP community to identify this underlying condition. With so many moving parts in these real-life scenarios, the issue of clinical uncertainty is nearly unavoidable. Subsequently, the review of clinical cases can assist clinicians in elucidating the clinical nuances in where and how to apply advances in practice. This educational initiative will address identified practice gaps and educational needs through extensive discussion of updated, guideline- and evidence-based strategies for screening, diagnosis, referral, and medical management of hypercortisolism.
+              The hypercortisolism landscape continues to rapidly evolve, producing a CALL-TO-ACTION for HCPs to stay up-to-date and implement advances in practice.
             </motion.p>
 
 
