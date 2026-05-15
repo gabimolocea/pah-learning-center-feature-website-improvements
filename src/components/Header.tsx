@@ -43,8 +43,8 @@ export function Header() {
             className="flex items-center absolute left-4"
           >
                                     <Image
-                          src={`${assetPrefix}/glc.png`}
-                          alt="Global Learning Collaborative"
+                          src={`${assetPrefix}/reach.png`}
+                          alt="ReachMD"
                           width={120}
                           height={36}
                           className="h-6 sm:h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
