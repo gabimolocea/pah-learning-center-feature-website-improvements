@@ -143,7 +143,7 @@ export function EducationalPrograms() {
   const activities = [
     {
       title: "Breaking Ground: 2025 Milestones in Cushing Syndrome and Looking Forward to 2026",
-      credits: "1.00",
+      credits: "0.25",
       segmentId: "50059",
       thumbnail: "random/image-1.png",
       expirationDate: "03/06/2027",
@@ -151,7 +151,7 @@ export function EducationalPrograms() {
     },
     {
       title: "Applying Advances in Practice: Case-Based Look at Selecting Therapy for Cushing Syndrome",
-      credits: "1.00",
+      credits: "0.25",
       segmentId: "50063",
       thumbnail: "random/image-2.png",
       expirationDate: "03/13/2027",
