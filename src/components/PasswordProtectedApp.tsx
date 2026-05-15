@@ -5,6 +5,7 @@ import { VideoIntroduction } from './VideoIntroduction'
 import { Statistics } from './Statistics'
 import { EducationalPrograms } from './EducationalPrograms'
 import { ResourceCenter } from './ResourceCenter'
+import { ProgramOverview } from './ProgramOverview'
 import { Faculty } from './Faculty'
 import { Footer } from './Footer'
 import { Header } from './Header'
@@ -17,6 +18,7 @@ export function PasswordProtectedApp() {
         <Hero />
         <Statistics />
         <EducationalPrograms />
+        <ProgramOverview />
         <ResourceCenter />
         <Faculty />
         <Footer />
