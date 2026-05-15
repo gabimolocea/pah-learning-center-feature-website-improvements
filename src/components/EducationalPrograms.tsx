@@ -96,7 +96,6 @@ function ActivityCard({ title, credits, segmentId, link, thumbnail, expirationDa
               <span className="text-xs font-medium hidden sm:inline">CME Activity</span>
               <span className="text-xs font-medium sm:hidden">CME</span>
             </div>
-            <div className="text-xs text-slate-500 font-mono">#{segmentId}</div>
           </div>
 
           {/* Title */}
