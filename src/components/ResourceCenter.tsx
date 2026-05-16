@@ -17,7 +17,7 @@ interface ResearchPaperProps {
 
 function ResearchPaper({ year, authors, journal, title, summary, link, index, isHighlight = false }: ResearchPaperProps) {
   const handleClick = () => {
-    window.open(link, '_blank')
+    if (link) window.open(link, '_blank')
   }
 
   return (
@@ -26,7 +26,7 @@ function ResearchPaper({ year, authors, journal, title, summary, link, index, is
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group cursor-pointer"
+      className={link ? 'group cursor-pointer' : 'group cursor-default'}
       onClick={handleClick}
     >
       <div className={`relative p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl h-[400px] flex flex-col ${
@@ -80,10 +80,16 @@ function ResearchPaper({ year, authors, journal, title, summary, link, index, is
           <div className="text-xs text-slate-500">
             {authors.length > 50 ? authors.substring(0, 50) + '...' : authors}
           </div>
-          <div className="flex items-center space-x-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-            <span>Read Study</span>
-            <ChevronRight size={16} />
-          </div>
+          {link ? (
+            <div className="flex items-center space-x-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>Read Study</span>
+              <ChevronRight size={16} />
+            </div>
+          ) : (
+            <div className="bg-slate-200 text-slate-500 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+              Coming Soon
+            </div>
+          )}
         </div>
 
         {/* Hover Overlay */}
@@ -109,15 +115,23 @@ export function ResourceCenter() {
       isHighlight: true
     },
     {
-      year: "Ep. 2",
+      year: "Ep. 3",
       authors: "The Cortisol Reports",
       journal: "CME Video Series",
-      title: "Applying Advances in Practice: Case-Based Look at Selecting Therapy for Cushing Syndrome",
-      summary: "Episode 2 – Applying Advances in Practice: Case-Based Look at Selecting Therapy for Cushing Syndrome",
-      link: "https://reachmd.com/programs/cme/applying-advances-in-practice-case-based-look-at-selecting-therapy-for-cushing-syndrome/50063/",
-      isHighlight: true
+      title: "Continuing the Search: New Data on Hypercortisolism Prevalence in Difficult-to-Control Metabolic Conditions",
+      summary: "Episode 3 – Continuing the Search: New Data on Hypercortisolism Prevalence in Difficult-to-Control Metabolic Conditions",
+      link: "",
+      isHighlight: false
+    },
+    {
+      year: "",
+      authors: "The Cortisol Reports",
+      journal: "CME Resource",
+      title: "Cushing's at the Core",
+      summary: "A focused resource exploring the core principles of Cushing's syndrome — coming soon.",
+      link: "",
+      isHighlight: false
     }
-  ]
 
   return (
     <section ref={ref} id="resource-center" className="pt-16 pb-4 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
