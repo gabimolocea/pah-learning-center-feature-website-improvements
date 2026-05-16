@@ -132,6 +132,7 @@ export function ResourceCenter() {
       link: "",
       isHighlight: false
     }
+  ]
 
   return (
     <section ref={ref} id="resource-center" className="pt-16 pb-4 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
