@@ -8,7 +8,7 @@ export function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 80; // Account for fixed header height (h-20 = 80px)
+      const headerHeight = 112; // Account for fixed header height (h-28 = 112px)
       const elementPosition = element.offsetTop - headerHeight;
       window.scrollTo({
         top: elementPosition,
@@ -34,7 +34,7 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-xl"
     >
       <div className="w-full px-4 lg:px-8">
-        <div className="flex items-center h-20 relative">
+        <div className="flex items-center h-28 relative">
           {/* Logo - Far Left with extra margin */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -45,9 +45,9 @@ export function Header() {
                                     <Image
                           src={`${assetPrefix}/reach.png`}
                           alt="ReachMD"
-                          width={200}
-                          height={60}
-                          className="h-10 sm:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
+                          width={400}
+                          height={120}
+                          className="h-20 sm:h-28 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
                           priority
                           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         />
