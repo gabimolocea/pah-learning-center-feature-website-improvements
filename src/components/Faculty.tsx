@@ -11,10 +11,42 @@ interface FacultyCardProps {
   name: string
   credentials: string
   image?: string
+  profileUrl?: string
   index: number
 }
 
-function FacultyCard({ name, credentials, image, index }: FacultyCardProps) {
+function FacultyCard({ name, credentials, image, profileUrl, index }: FacultyCardProps) {
+  const cardContent = (
+    <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4 transition-all duration-200 hover:shadow-xl hover:border-blue-300">
+      {/* Profile Photo */}
+      <div className="flex flex-col items-center text-center">
+        <div className="relative w-16 h-16 mb-3">
+          <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center overflow-hidden border-3 border-white shadow-md">
+            {image ? (
+              <Image
+                src={`${assetPrefix}/headshot/${image}`}
+                alt={name}
+                width={64}
+                height={64}
+                className="w-full h-full object-cover rounded-full"
+              />
+            ) : (
+              <User className="w-8 h-8 text-slate-400" />
+            )}
+          </div>
+        </div>
+        
+        {/* Name & Credentials */}
+        <h3 className="heading-font font-semibold text-slate-900 text-sm text-center leading-tight mb-1">
+          {name}
+        </h3>
+        <div className="text-xs font-medium text-blue-600 text-center">
+          {credentials}
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
@@ -22,34 +54,11 @@ function FacultyCard({ name, credentials, image, index }: FacultyCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.2, delay: index * 0.01 }}
     >
-      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4">
-        {/* Profile Photo */}
-        <div className="flex flex-col items-center text-center">
-          <div className="relative w-16 h-16 mb-3">
-            <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center overflow-hidden border-3 border-white shadow-md">
-              {image ? (
-                <Image
-                  src={`${assetPrefix}/headshot/${image}`}
-                  alt={name}
-                  width={64}
-                  height={64}
-                  className="w-full h-full object-cover rounded-full"
-                />
-              ) : (
-                <User className="w-8 h-8 text-slate-400" />
-              )}
-            </div>
-          </div>
-          
-          {/* Name & Credentials */}
-          <h3 className="heading-font font-semibold text-slate-900 text-sm text-center leading-tight mb-1">
-            {name}
-          </h3>
-          <div className="text-xs font-medium text-blue-600 text-center">
-            {credentials}
-          </div>
-        </div>
-      </div>
+      {profileUrl ? (
+        <a href={profileUrl} target="_blank" rel="noopener noreferrer">
+          {cardContent}
+        </a>
+      ) : cardContent}
     </motion.div>
   )
 }
@@ -59,11 +68,11 @@ export function Faculty() {
   const isInView = useInView(ref, { once: true })
 
   const facultyMembers = [
-    { name: "Deepak Bhatt", credentials: "MD, MPH, MBA, FACC, FAHA", image: "deepak-bhatt.jpg" },
-    { name: "Amir H. Hamrahian", credentials: "MD", image: "Amir-Hamrahian.jpg" },
-    { name: "Lewis S. Blevins, Jr", credentials: "MD", image: "Lewis-Blevins.jpg" },
-    { name: "James W. Suliburk", credentials: "MD, FACS", image: "James-Suliburk.jpg" },
-    { name: "Christian Mende", credentials: "MD, FACP, FACN, FASN, FASH, FAHA", image: "christian-mende.png" }
+    { name: "Deepak Bhatt", credentials: "MD, MPH, MBA, FACC, FAHA", image: "deepak-bhatt.jpg", profileUrl: "https://reachmd.com/profiles/deepak-bhatt-md-mph-mba-facc-faha/LD0N44/" },
+    { name: "Amir H. Hamrahian", credentials: "MD", image: "Amir-Hamrahian.jpg", profileUrl: "https://reachmd.com/profiles/amir-h-hamrahian-md/LaX2ze/" },
+    { name: "Lewis S. Blevins, Jr", credentials: "MD", image: "Lewis-Blevins.jpg", profileUrl: "https://reachmd.com/profiles/lewis-s-blevins-jr-md/L8JbnV/" },
+    { name: "James W. Suliburk", credentials: "MD, FACS", image: "James-Suliburk.jpg", profileUrl: "https://reachmd.com/profiles/james-w-suliburk-md-facs/jM4PlN/" },
+    { name: "Christian Mende", credentials: "MD, FACP, FACN, FASN, FASH, FAHA", image: "christian-mende.png", profileUrl: "https://reachmd.com/profiles/christian-mende-md-facp-facn-fasn-fash-faha/LxB5KQ/" }
   ]
 
   return (

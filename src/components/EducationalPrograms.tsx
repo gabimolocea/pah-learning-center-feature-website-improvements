@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Award, ExternalLink, Calendar, Clock, Stethoscope, Play, AlertTriangle } from 'lucide-react'
 import Image from 'next/image'
 
@@ -289,8 +289,11 @@ export function EducationalPrograms() {
     }
   ]
 
-  // Pick a random featured index on each page load
-  const [featuredIndex] = useState(() => Math.floor(Math.random() * activities.length))
+  // Pick a random featured index on client only (avoids SSR hydration mismatch)
+  const [featuredIndex, setFeaturedIndex] = useState(0)
+  useEffect(() => {
+    setFeaturedIndex(Math.floor(Math.random() * activities.length))
+  }, [])
   const featuredActivity = activities[featuredIndex]
   const gridActivities = activities.filter((_, i) => i !== featuredIndex)
 
