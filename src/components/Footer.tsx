@@ -25,7 +25,7 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-between gap-8"
           >
-            {/* ReachMD Logo */}
+            {/* AACME Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -33,8 +33,8 @@ export function Footer() {
               className="flex items-center"
             >
               <Image
-                src={`${assetPrefix}/glc.png`}
-                alt="Global Learning Collaborative"
+                src={`${assetPrefix}/aacme-logo.png`}
+                alt="American Academy of CME"
                 width={120}
                 height={36}
                 className="h-9 w-auto object-contain"
