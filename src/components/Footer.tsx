@@ -25,19 +25,24 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-between gap-8"
           >
-            {/* AACME Logo */}
+            {/* Logos */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex items-center"
+              className="flex items-center gap-6"
             >
-              <Image
-                src={`${assetPrefix}/aacme-logo.png`}
+              <img
+                src={`${assetPrefix}/Cornerstone-Logo.png`}
+                srcSet={`${assetPrefix}/Cornerstone-Logo.png 1x, ${assetPrefix}/Cornerstone-Logo@2x.png 2x`}
+                alt="Cornerstone Medical Education"
+                className="h-10 w-auto object-contain"
+              />
+              <img
+                src={`${assetPrefix}/AA-CME.png`}
+                srcSet={`${assetPrefix}/AA-CME.png 1x, ${assetPrefix}/AA-CME@2x.png 2x`}
                 alt="American Academy of CME"
-                width={120}
-                height={36}
-                className="h-9 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
             </motion.div>
 
@@ -96,7 +101,7 @@ export function Footer() {
               This curriculum is jointly provided by Cornerstone Medical Education and the American Academy of CME.
             </p>
             <p className="text-gray-500 text-sm mt-1">
-              © 2025 ReachMD. All rights reserved.
+              © 2026 ReachMD. All rights reserved.
             </p>
           </motion.div>
         </div>

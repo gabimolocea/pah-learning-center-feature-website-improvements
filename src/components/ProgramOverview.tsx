@@ -8,7 +8,7 @@ export function ProgramOverview() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="py-12 bg-white">
+    <section ref={ref} className="w-full bg-[#e5e7eb]" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
