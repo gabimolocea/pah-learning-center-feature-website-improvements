@@ -43,7 +43,7 @@ export function Header() {
             className="flex items-center absolute left-4"
           >
                                     <Image
-                          src={`${assetPrefix}/reach.png`}
+                          src={`${assetPrefix}/reachmd-logo.png`}
                           alt="ReachMD"
                           width={400}
                           height={120}
