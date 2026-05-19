@@ -101,6 +101,9 @@ export function Footer() {
               This curriculum is jointly provided by Cornerstone Medical Education and the American Academy of CME.
             </p>
             <p className="text-gray-500 text-sm mt-1">
+              Supported by an educational grant from Corcept Therapeutics.
+            </p>
+            <p className="text-gray-500 text-sm mt-1">
               © 2026 ReachMD. All rights reserved.
             </p>
           </motion.div>
