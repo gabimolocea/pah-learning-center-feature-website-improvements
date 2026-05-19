@@ -11,11 +11,12 @@ interface ResearchPaperProps {
   title: string
   summary: string
   link: string
+  slidesUrl?: string
   index: number
   isHighlight?: boolean
 }
 
-function ResearchPaper({ year, authors, journal, title, summary, link, index, isHighlight = false }: ResearchPaperProps) {
+function ResearchPaper({ year, authors, journal, title, summary, link, slidesUrl, index, isHighlight = false }: ResearchPaperProps) {
   const handleClick = () => {
     if (link) window.open(link, '_blank')
   }
@@ -80,16 +81,30 @@ function ResearchPaper({ year, authors, journal, title, summary, link, index, is
           <div className="text-xs text-slate-500">
             {authors.length > 50 ? authors.substring(0, 50) + '...' : authors}
           </div>
-          {link ? (
-            <div className="flex items-center space-x-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-              <span>Read Study</span>
-              <ChevronRight size={16} />
-            </div>
-          ) : (
-            <div className="bg-slate-200 text-slate-500 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
-              Coming Soon
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            {slidesUrl && (
+              <a
+                href={slidesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center space-x-1 text-teal-600 text-sm font-medium hover:text-teal-700 transition-colors"
+              >
+                <Download size={14} />
+                <span>Slides</span>
+              </a>
+            )}
+            {link ? (
+              <div className="flex items-center space-x-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                <span>View</span>
+                <ChevronRight size={16} />
+              </div>
+            ) : (
+              <div className="bg-slate-200 text-slate-500 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                Coming Soon
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Hover Overlay */}
@@ -112,7 +127,18 @@ export function ResourceCenter() {
       title: "Breaking Ground: 2025 Milestones in Cushing Syndrome and Looking Forward to 2026",
       summary: "Episode 1 – Breaking Ground: 2025 Milestones in Cushing Syndrome and Looking Forward to 2026",
       link: "https://reachmd.com/programs/cme/breaking-ground-2025-milestones-in-cushing-syndrome-and-looking-forward-to-2026/50059/",
+      slidesUrl: "https://cdn.reachmd.com/uploads/50059_Final_Downloadable_Slides.pdf",
       isHighlight: true
+    },
+    {
+      year: "Ep. 2",
+      authors: "The Cortisol Reports",
+      journal: "CME Video Series",
+      title: "Applying Advances in Practice: Case-Based Look at Selecting Therapy for Cushing Syndrome",
+      summary: "Episode 2 – Applying Advances in Practice: Case-Based Look at Selecting Therapy for Cushing Syndrome",
+      link: "",
+      slidesUrl: "https://cdn.reachmd.com/uploads/50063_Downloadable_Slides.pdf",
+      isHighlight: false
     },
     {
       year: "Ep. 3",
@@ -121,6 +147,7 @@ export function ResourceCenter() {
       title: "Continuing the Search: New Data on Hypercortisolism Prevalence in Difficult-to-Control Metabolic Conditions",
       summary: "Episode 3 – Continuing the Search: New Data on Hypercortisolism Prevalence in Difficult-to-Control Metabolic Conditions",
       link: "",
+      slidesUrl: "https://cdn.reachmd.com/uploads/50066_Downloadable_Slides.pdf",
       isHighlight: false
     },
     {
@@ -128,8 +155,9 @@ export function ResourceCenter() {
       authors: "The Cortisol Reports",
       journal: "CME Resource",
       title: "Cushing's at the Core",
-      summary: "A focused resource exploring the core principles of Cushing's syndrome — coming soon.",
+      summary: "A focused resource exploring the core principles of Cushing's syndrome.",
       link: "",
+      slidesUrl: "https://cdn.reachmd.com/uploads/39896_Grand%20Rounds%20Nation%20Enduring%20Slides.pdf",
       isHighlight: false
     }
   ]
