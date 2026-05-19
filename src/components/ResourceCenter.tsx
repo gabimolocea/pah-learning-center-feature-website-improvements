@@ -30,7 +30,7 @@ function ResearchPaper({ year, authors, journal, title, summary, link, slidesUrl
       className={link ? 'group cursor-pointer' : 'group cursor-default'}
       onClick={handleClick}
     >
-      <div className={`relative p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl flex flex-col ${
+      <div className={`relative p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl flex flex-col h-full ${
         isHighlight 
           ? 'bg-gradient-to-br from-blue-50 to-teal-50 border-blue-200 hover:border-blue-300' 
           : 'bg-white border-slate-200 hover:border-blue-300'
@@ -62,7 +62,7 @@ function ResearchPaper({ year, authors, journal, title, summary, link, slidesUrl
         </div>
 
         {/* Title */}
-        <h3 className="font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors text-lg flex-1">
+        <h3 className="font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors text-lg line-clamp-2 flex-1">
           {title}
         </h3>
 
@@ -189,7 +189,7 @@ export function ResourceCenter() {
         </motion.div>
 
         {/* Resources Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 gap-6 mt-12 items-stretch">
           {researchPapers.map((paper, index) => (
             <ResearchPaper key={index} {...paper} index={index} />
           ))}
