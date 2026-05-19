@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, ExternalLink, Calendar, TrendingUp, Award, Beaker, Database, ArrowRight, ChevronRight, Download } from 'lucide-react'
+import { FileText, ExternalLink, Calendar, Award, Beaker, Database, ArrowRight, ChevronRight, Download } from 'lucide-react'
 
 interface ResearchPaperProps {
   year: string
@@ -62,19 +62,9 @@ function ResearchPaper({ year, authors, journal, title, summary, link, slidesUrl
         </div>
 
         {/* Title */}
-        <h3 className="font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors text-lg">
+        <h3 className="font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors text-lg flex-1">
           {title}
         </h3>
-
-        {/* Summary/Key Finding */}
-        <div className="bg-slate-50 rounded-xl p-4 mb-4 border border-slate-100 flex-1">
-          <div className="flex items-start space-x-2">
-            <TrendingUp size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
-            <p className="text-sm text-slate-700 leading-relaxed">
-              {summary}
-            </p>
-          </div>
-        </div>
 
         {/* Action Row */}
         <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
