@@ -30,7 +30,7 @@ function ResearchPaper({ year, authors, journal, title, summary, link, slidesUrl
       className={link ? 'group cursor-pointer' : 'group cursor-default'}
       onClick={handleClick}
     >
-      <div className={`relative p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl h-[400px] flex flex-col ${
+      <div className={`relative p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl flex flex-col ${
         isHighlight 
           ? 'bg-gradient-to-br from-blue-50 to-teal-50 border-blue-200 hover:border-blue-300' 
           : 'bg-white border-slate-200 hover:border-blue-300'
