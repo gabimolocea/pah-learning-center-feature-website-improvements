@@ -259,8 +259,10 @@ export function EducationalPrograms() {
       title: "Continuing the Search: New Data on Hypercortisolism Prevalence in Difficult-to-Control Metabolic Conditions",
       segmentId: "50066",
       thumbnail: "random/image-3.png",
+      credits: "0.25",
       publishDate: "05/15/2026",
-      comingSoon: true
+      expirationDate: "05/15/2027",
+      link: "https://reachmd.com/programs/cme/continuing-the-search-new-data-on-hypercortisolism-prevalence-in-difficult-to-control-metabolic-conditions/50066/"
     },
     {
       title: "Title to Be Announced",

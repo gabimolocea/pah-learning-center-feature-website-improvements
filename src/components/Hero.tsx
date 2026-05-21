@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Activity, Users, Award, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 
 export function Hero() {
@@ -43,38 +43,6 @@ export function Hero() {
             <div className="absolute top-1/2 left-0 w-3 h-3 bg-blue-300 rounded-full -translate-y-1/2" />
             <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
           </div>
-        </motion.div>
-
-        {/* Floating Medical Icons */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-32 left-20 opacity-30"
-        >
-          <Heart size={24} className="text-blue-300" />
-        </motion.div>
-
-        <motion.div
-          animate={{
-            y: [0, -15, 0],
-            x: [0, -8, 0]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-32 right-32 opacity-30"
-        >
-          <Activity size={28} className="text-teal-300" />
         </motion.div>
 
         {/* Dynamic Gradient Overlays */}
@@ -168,22 +136,7 @@ export function Hero() {
                 />
               </div>
 
-              {/* Floating Elements */}
-              <motion.div
-                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
-              >
-                <Users className="text-blue-300" size={24} />
-              </motion.div>
 
-              <motion.div
-                animate={{ y: [0, -8, 0], rotate: [0, -3, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
-              >
-                <Activity className="text-teal-300" size={24} />
-              </motion.div>
 
 
 

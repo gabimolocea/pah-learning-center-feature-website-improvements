@@ -17,9 +17,9 @@ interface FacultyCardProps {
 
 function FacultyCard({ name, credentials, image, profileUrl, index }: FacultyCardProps) {
   const cardContent = (
-    <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4 transition-all duration-200 hover:shadow-xl hover:border-blue-300">
+    <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4 transition-all duration-200 hover:shadow-xl hover:border-blue-300 h-full flex flex-col">
       {/* Profile Photo */}
-      <div className="flex flex-col items-center text-center">
+      <div className="flex flex-col items-center text-center flex-1">
         <div className="relative w-16 h-16 mb-3">
           <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center overflow-hidden border-3 border-white shadow-md">
             {image ? (
@@ -53,9 +53,10 @@ function FacultyCard({ name, credentials, image, profileUrl, index }: FacultyCar
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.2, delay: index * 0.01 }}
+      className="h-full"
     >
       {profileUrl ? (
-        <a href={profileUrl} target="_blank" rel="noopener noreferrer">
+        <a href={profileUrl} target="_blank" rel="noopener noreferrer" className="h-full block">
           {cardContent}
         </a>
       ) : cardContent}
