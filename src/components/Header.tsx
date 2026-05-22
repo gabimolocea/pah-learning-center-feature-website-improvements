@@ -34,16 +34,16 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-xl"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-white/20 shadow-xl"
     >
-      <div className="w-full px-4 lg:px-8">
-        <div className="flex items-center h-16 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-16">
           {/* Logo - Far Left with extra margin */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2, delay: 0.05 }}
-            className="flex items-center absolute left-4"
+            className="flex items-center"
           >
                                     <Image
                           src={`${assetPrefix}/reachmd-logo.png`}
@@ -61,7 +61,7 @@ export function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="hidden md:flex items-center space-x-4 lg:space-x-8 absolute inset-y-0 right-4 lg:right-8"
+            className="hidden md:flex items-center space-x-4 lg:space-x-8"
           >
             {navigationItems.map((item, index) => (
               <motion.button
@@ -82,7 +82,7 @@ export function Header() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2, delay: 0.15 }}
-            className="md:hidden absolute right-4"
+            className="md:hidden"
           >
             <button
               onClick={() => setMenuOpen(prev => !prev)}
