@@ -326,7 +326,7 @@ export function EducationalPrograms() {
         <FeaturedCard activity={featuredActivity} index={0} />
 
         {/* 2×3 Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {gridActivities.map((activity, index) => (
             <ActivityCard key={activity.segmentId} activity={activity} index={index} />
           ))}

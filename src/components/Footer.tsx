@@ -46,7 +46,7 @@ export function Footer() {
               />
             </motion.div>
 
-            {/* Navigation Links */}
+            {/* Navigation Links + Contact Us */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -71,15 +71,7 @@ export function Footer() {
               >
                 About
               </button>
-            </motion.div>
-
-            {/* Contact Us Button */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <a 
+              <a
                 href="https://reachmd.com/pages/about/#about"
                 target="_blank"
                 rel="noopener noreferrer"

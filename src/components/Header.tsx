@@ -1,14 +1,17 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { Heart, Award } from 'lucide-react'
+import { useState } from 'react'
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 112; // Account for fixed header height (h-28 = 112px)
+      const headerHeight = 64; // Account for fixed header height (h-16 = 64px)
       const elementPosition = element.offsetTop - headerHeight;
       window.scrollTo({
         top: elementPosition,
@@ -34,7 +37,7 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-xl"
     >
       <div className="w-full px-4 lg:px-8">
-        <div className="flex items-center h-28 relative">
+        <div className="flex items-center h-16 relative">
           {/* Logo - Far Left with extra margin */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -53,12 +56,12 @@ export function Header() {
                         />
           </motion.div>
 
-          {/* Navigation Tabs - Perfectly Centered */}
+          {/* Navigation Tabs - Right Aligned */}
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="hidden md:flex items-center space-x-4 lg:space-x-8 absolute left-1/2 transform -translate-x-1/2"
+            className="hidden md:flex items-center space-x-4 lg:space-x-8 absolute inset-y-0 right-4 lg:right-8"
           >
             {navigationItems.map((item, index) => (
               <motion.button
@@ -81,14 +84,49 @@ export function Header() {
             transition={{ duration: 0.2, delay: 0.15 }}
             className="md:hidden absolute right-4"
           >
-            <button className="p-2 text-slate-800 hover:text-slate-900 transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button
+              onClick={() => setMenuOpen(prev => !prev)}
+              className="p-2 text-slate-800 hover:text-slate-900 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </motion.div>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-white/20"
+          >
+            <div className="flex flex-col px-4 py-3 space-y-1">
+              {navigationItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => { scrollToSection(item.id); setMenuOpen(false); }}
+                  className="text-left px-3 py-2 text-sm font-semibold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent hover:bg-slate-50 rounded-lg transition-colors"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Animated gradient line */}
       <motion.div
