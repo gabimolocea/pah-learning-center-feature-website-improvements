@@ -292,12 +292,13 @@ export function EducationalPrograms() {
   ]
 
   // Pick a random featured index on client only (avoids SSR hydration mismatch)
+  const activeActivities = activities.filter(a => !a.comingSoon)
   const [featuredIndex, setFeaturedIndex] = useState(0)
   useEffect(() => {
-    setFeaturedIndex(Math.floor(Math.random() * activities.length))
+    setFeaturedIndex(Math.floor(Math.random() * activeActivities.length))
   }, [])
-  const featuredActivity = activities[featuredIndex]
-  const gridActivities = activities.filter((_, i) => i !== featuredIndex)
+  const featuredActivity = activeActivities[featuredIndex]
+  const gridActivities = activities.filter(a => a.segmentId !== featuredActivity?.segmentId)
 
   return (
     <section ref={ref} id="educational-activities" className="py-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">

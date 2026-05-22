@@ -7,7 +7,7 @@ import Image from 'next/image'
 export function Hero() {
   const assetPrefix = process.env.ASSET_PREFIX || '';
   return (
-    <section className="relative h-[45vh] sm:h-[45vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Sophisticated Background Patterns */}
       <div className="absolute inset-0">
         {/* Medical Grid Pattern */}
@@ -67,7 +67,7 @@ export function Hero() {
 
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center h-full px-6 lg:px-12">
+      <div className="relative z-10 flex items-center py-10 lg:py-16 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Text Content */}
