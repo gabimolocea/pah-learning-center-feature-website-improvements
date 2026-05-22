@@ -93,7 +93,7 @@ export function VideoIntroduction() {
   ]
 
   return (
-    <section ref={ref} id="comprehensive-hub" className="py-4 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
+    <section ref={ref} id="comprehensive-hub" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>

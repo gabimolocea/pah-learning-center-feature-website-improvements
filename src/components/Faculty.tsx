@@ -77,7 +77,7 @@ export function Faculty() {
   ]
 
   return (
-    <section ref={ref} id="faculty" className="pt-16 pb-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+    <section ref={ref} id="faculty" className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
       {/* Sophisticated Background Elements */}
       <div className="absolute inset-0">
         {/* Animated gradient orbs */}

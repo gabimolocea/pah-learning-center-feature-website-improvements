@@ -14,7 +14,7 @@ export function Statistics() {
 
 
   return (
-    <section ref={ref} id="associated-diseases" className="py-8 bg-gradient-to-br from-white via-blue-50/30 to-slate-50 relative overflow-hidden">
+    <section ref={ref} id="associated-diseases" className="py-16 bg-gradient-to-br from-white via-blue-50/30 to-slate-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-40"></div>

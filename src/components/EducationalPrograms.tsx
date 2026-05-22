@@ -300,7 +300,7 @@ export function EducationalPrograms() {
   const gridActivities = activities.filter((_, i) => i !== featuredIndex)
 
   return (
-    <section ref={ref} id="educational-activities" className="pt-0 pb-4 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden -mt-4">
+    <section ref={ref} id="educational-activities" className="py-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-64 h-64 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse animation-delay-3s"></div>
