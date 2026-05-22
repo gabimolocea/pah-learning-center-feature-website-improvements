@@ -173,7 +173,7 @@ export function VideoIntroduction() {
             <Heart size={14} />
             <span>Understanding Disease Complexity</span>
           </div>
-          <h2 className="heading-font text-lg sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
+          <h2 className="heading-font text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
             Associated Diseases and Conditions of PH
           </h2>
           <p className="text-sm sm:text-base text-slate-900 leading-relaxed max-w-3xl mx-auto">

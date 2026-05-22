@@ -142,7 +142,7 @@ export function ResourceCenter() {
           className="text-center mb-16"
         >
 
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="heading-font text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
             Resource{' '}
             <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
               Center

@@ -132,7 +132,7 @@ export function Faculty() {
         >
 
           
-          <h2 className="heading-font text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+          <h2 className="heading-font text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
             Distinguished{' '}
             <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
               Faculty

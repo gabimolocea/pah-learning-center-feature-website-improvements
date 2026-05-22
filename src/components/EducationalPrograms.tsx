@@ -315,7 +315,7 @@ export function EducationalPrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <h2 className="heading-font text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="heading-font text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
             Educational{' '}
             <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
               Activities
